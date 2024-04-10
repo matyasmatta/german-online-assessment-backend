@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - pip install -r requirements.txt -t .
+
+  build:
+    commands:
+      - zip -r function.zip .
+      - mv function.zip /tmp/
+
+artifacts:
+  files:
+    - /tmp/function.zip
